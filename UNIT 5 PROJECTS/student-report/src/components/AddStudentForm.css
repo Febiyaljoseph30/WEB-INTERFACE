@@ -1,0 +1,119 @@
+.add-form__wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.add-form__saved {
+  font-size: 0.85rem;
+  color: #0a6b4d;
+  font-weight: 600;
+}
+
+.add-form {
+  margin-top: 16px;
+  padding: 18px 20px 20px;
+  background: #fbfcfe;
+  border: 1px solid #e2e6ef;
+  border-radius: 12px;
+}
+
+.add-form__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.add-form__head h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #101828;
+}
+
+.add-form__close {
+  font: inherit;
+  font-size: 0.85rem;
+  color: #667085;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.add-form__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.add-form__grid label,
+.add-form__marks label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.add-form__grid label > span,
+.add-form__marks label > span {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #667085;
+}
+
+.add-form__marks label > span em {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.75rem;
+  color: #98a2b3;
+}
+
+.add-form input,
+.add-form select {
+  height: 36px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: #101828;
+  background: #fff;
+  border: 1px solid #cdd3e0;
+  border-radius: 8px;
+  outline: none;
+}
+
+.add-form input:focus,
+.add-form select:focus {
+  border-color: #1f4fd8;
+  box-shadow: 0 0 0 3px rgba(31, 79, 216, 0.14);
+}
+
+.add-form__subtitle {
+  margin: 20px 0 10px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #667085;
+}
+
+.add-form__marks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.err {
+  font-size: 0.75rem;
+  font-style: normal;
+  color: #b42318;
+  font-weight: 600;
+}
+
+.add-form__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}

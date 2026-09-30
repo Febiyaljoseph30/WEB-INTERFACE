@@ -31,6 +31,7 @@ jobs:
             UNIT 3 PROJECTS/Calculator/package-lock.json
             UNIT 3 PROJECTS/Calculator/calculator/package-lock.json
             UNIT 4 PROJECTS/Unit 4/form-validation/package-lock.json
+            UNIT 5 PROJECTS/student-report/package-lock.json
 
       - run: node scripts/build-all.mjs
 

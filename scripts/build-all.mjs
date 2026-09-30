@@ -16,6 +16,7 @@ const apps = [
   { slug: 'calculator', title: 'Calculator', unit: 3, kind: 'vite', from: 'UNIT 3 PROJECTS/Calculator/calculator' },
   { slug: 'react-starter', title: 'React Starter (Calculator folder)', unit: 3, kind: 'vite', from: 'UNIT 3 PROJECTS/Calculator' },
   { slug: 'form-validation', title: 'Form Validation', unit: 4, kind: 'vite', from: 'UNIT 4 PROJECTS/Unit 4/form-validation' },
+  { slug: 'student-report', title: 'Student Performance Report', unit: 5, kind: 'vite', from: 'UNIT 5 PROJECTS/student-report' },
 ]
 
 const run = (cmd, cwd) => execSync(cmd, { cwd, stdio: 'inherit', shell: true })
@@ -101,7 +102,8 @@ const html = `<!DOCTYPE html>
 <div class="wrap">
   <h1>WEB INTERFACE</h1>
   <p class="sub">All unit projects &mdash; every project has its own link.</p>
-${[1, 2, 3, 4]
+${[...new Set(built.map((a) => a.unit))]
+  .sort((a, b) => a - b)
   .map(
     (n) =>
       `\n  <h2>Unit ${n}</h2>\n  <ul>\n${unit(n).map(card).join('\n')}\n  </ul>`,

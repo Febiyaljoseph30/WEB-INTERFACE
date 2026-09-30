@@ -1,0 +1,47 @@
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #e2e6ef;
+  border-left: 4px solid #1f4fd8;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.stat-card--good {
+  border-left-color: #12805c;
+}
+
+.stat-card--warn {
+  border-left-color: #b54708;
+}
+
+.stat-card--best {
+  border-left-color: #6941c6;
+}
+
+.stat-card__label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #667085;
+}
+
+.stat-card__value {
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: #101828;
+}
+
+.stat-card__hint {
+  font-size: 0.78rem;
+  color: #98a2b3;
+}
