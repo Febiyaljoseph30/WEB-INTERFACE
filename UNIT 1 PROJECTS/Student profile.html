@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    text-align:center;
+    font-family:Arial;
+    }
+input,button{
+    margin:5px;
+    padding:8px;
+    }
+#card{
+    border:1px solid black;
+    width:220px;
+    margin:20px auto;
+    padding:10px;
+    }
+</style>
+</head>
+<body>
+
+<input id="name" placeholder="Name"><br>
+<input id="roll" placeholder="Roll No"><br>
+<input id="marks" placeholder="Marks"><br>
+
+<button onclick="show()">Display Profile</button>
+
+<div id="card">
+<p>Name: <span id="n"></span></p>
+<p>Roll: <span id="r"></span></p>
+<p>Marks: <span id="m"></span></p>
+<p>Grade: <span id="g"></span></p>
+</div>
+
+<script> 
+function show(){
+let marks=document.getElementById("marks").value;
+let grade;
+
+if(marks>=90) grade="A";
+else if(marks>=75) grade="B";
+else if(marks>=50) grade="C";
+else grade="Fail";
+
+document.getElementById("n").textContent=document.getElementById("name").value;
+document.getElementById("r").textContent=document.getElementById("roll").value;
+document.getElementById("m").textContent=marks;
+document.getElementById("g").textContent=grade;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #eef3f8;
+  color: #333;
+}
+
+.page {
+  width: 96%;
+  max-width: 525px;
+  margin: 15px auto;
+  padding: 20px 10px 15px;
+  background-color: #f5f8fc;
+  border: 5px solid #222;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #304766, #4969c2);
+  color: white;
+  text-align: center;
+  padding: 23px 10px;
+  border-radius: 14px;
+  margin: 0 18px 16px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.header p {
+  margin: 5px 0 0;
+  font-size: 11px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  margin: 14px 18px;
+  padding: 14px 16px;
+  border-radius: 11px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #304050;
+}
+
+.card p {
+  font-size: 10px;
+  line-height: 1.55;
+  margin: 6px 0;
+}
+
+/* Profile */
+.profile {
+  border-left-color: #1683ff;
+}
+
+.profile p b {
+  color: #0878f9;
+}
+
+/* About */
+.about {
+  border-left-color: #1683ff;
+}
+
+/* Skills */
+.skills {
+  border-left-color: #16a34a;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-list span {
+  font-size: 9px;
+  color: #168a3a;
+  border: 1px solid #58c97a;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #f7fff9;
+}
+
+/* Career */
+.career {
+  border-left-color: #f59e0b;
+}
+
+/* Contact */
+.contact {
+  border-left-color: #ef3340;
+}
+
+.contact p {
+  margin: 7px 0;
+}
+
+/* Footer */
+footer {
+  border-top: 2px solid #1683ff;
+  background-color: #edf3fa;
+  margin: 20px 0 0;
+  padding: 12px 5px;
+  text-align: center;
+  font-size: 9px;
+  color: #555;
+}
