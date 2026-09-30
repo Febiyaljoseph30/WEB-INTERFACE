@@ -1,4 +1,4 @@
-import { execSync } from 'node:child_process'
+import { execSync, execFileSync } from 'node:child_process'
 import { cpSync, mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -18,8 +18,13 @@ const apps = [
   { slug: 'form-validation', title: 'Form Validation', unit: 4, kind: 'vite', from: 'UNIT 4 PROJECTS/Unit 4/form-validation' },
 ]
 
-const run = (cmd, cwd) =>
-  execSync(cmd, { cwd, stdio: 'inherit', shell: 'cmd.exe' })
+const run = (cmd, cwd) => execSync(cmd, { cwd, stdio: 'inherit', shell: true })
+
+const runVite = (cwd, base) =>
+  execFileSync(process.execPath, [join(cwd, 'node_modules', 'vite', 'bin', 'vite.js'), 'build', '--base', base], {
+    cwd,
+    stdio: 'inherit',
+  })
 
 const only = process.argv.slice(2)
 const selected = only.length ? apps.filter((a) => only.includes(a.slug)) : apps
@@ -51,9 +56,13 @@ for (const app of selected) {
         run('npm install --no-audit --no-fund', from)
       }
     }
-    run(`npx vite build --base ${repoBase}${app.slug}/`, from)
-    cpSync(join(from, 'dist'), dest, { recursive: true })
-    rmSync(join(from, 'dist'), { recursive: true, force: true })
+    runVite(from, `${repoBase}${app.slug}/`)
+    const dist = join(from, 'dist')
+    if (!existsSync(join(dist, 'index.html'))) {
+      throw new Error(`build produced no dist/index.html for ${app.slug} (${app.from})`)
+    }
+    cpSync(dist, dest, { recursive: true })
+    rmSync(dist, { recursive: true, force: true })
   }
 
   built.push(app)
